@@ -5,15 +5,15 @@
 // console.
 
 class Animal {
-    protected name: string;
+  protected name: string;
 
-    constructor(name: string) {
-        this.name = name
-    }
+  constructor(name: string) {
+    this.name = name;
+  }
 
-    public move(distanceInMeters: number): void {
-        console.log(`${this.name} moved ${distanceInMeters}m.`);
-    }
+  public move(distanceInMeters: number): void {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
 }
 
 // We create a variable to store an instance of this class and then we can call methods on this instance.
@@ -26,28 +26,17 @@ class Animal {
 
 // There might be some class members that we do not want to be accessible outside of the class body. For example, we might not want the name property to be accessible outside in order to limit the access of a member only within the class. We can use the typescript keyword private and now any access outside the class body is resulting in a compile time error.
 
-let cat = new Animal('Cat');
+let cat = new Animal("Cat");
 cat.move(10);
-cat.name = 'Dog' // Error: Property 'name' is protected and only accessible within class 'Animal' and its subclasses.
+cat.name = "Dog"; // Error: Property 'name' is protected and only accessible within class 'Animal' and its subclasses.
 
-// Now JavaScript also supports class inheritance so we can create a class called Bird that extends Animal and has an additional method called fly. 
+// Now JavaScript also supports class inheritance so we can create a class called Bird that extends Animal and has an additional method called fly.
 
 class Bird extends Animal {
-    fly(distanceInMeters: number) {
-        console.log(`${this.name} flew ${distanceInMeters}m.`);
-    }
+  fly(distanceInMeters: number) {
+    console.log(`${this.name} flew ${distanceInMeters}m.`);
+  }
 }
 
 // Now, as mentioned, private members are only accessible in the class body. So we get a compile time error when we try to use the name property in the class. TypeScript provides another access modifier called protected, which still keeps the member inaccessible
 // on instances, however, makes it accessible within the class hierarchy so we can access this name property from the childbirth class.
-
-
-
-
-
-
-
-
-
-
-
